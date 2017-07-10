@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>详细新闻</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="【易服】软件，在工业后服务中用设备将人与人的联接与沟通由串联变为互联；  【云海桥】工业后服务社群，云集工业企业和互联网领域的上千名桥友，探讨和传播OTO工业云服务理念  。  【云海播种】计划正是借助【云海桥】社群的影响力，将【云海易服】产品与理念传播出去，让更多的  工业企业加入并从中获益。">
+		<meta name="keywords" content="云海慧服">
+	 	<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/css.css" />
+		<link rel="stylesheet" href="css/jquery.jslides.css" />
+		<style>
+			img{
+				display: block;
+				display: block;
+   				 max-width: 100%;
+			    height: auto;
+			        margin: 0 auto;
+			}
+		</style>
+		
+	</head>
+
+	<body>
+		<div class="containeg yhq_aboutUs" id="page">
+				<script type="text/javascript" src="html/tmpl/header.js"></script>			
+			<!--指导图开始-->
+			<div class="aboutUs_banner  bg-3 overlay-blue">
+				<div class="overlay"></div>
+			</div>
+						<div class="phoneBanner">
+				<div class="container">
+					<div class="row">
+						<img class="img-responsive" src="img/homeImg/yhhfPhoneBanner.jpg" alt="云海慧服" />
+					</div>
+				</div>
+			</div>
+			<!--指导图结束-->
+			<div id="yhq_news" class="container" >
+				
+			</div>
+			
+		<script type="text/javascript" src="html/tmpl/footer.js"></script>	
+
+		</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/wow.js"></script>
+	<script>
+		$(document).ready(function() {
+			function getHref() {
+				var address = decodeURI(window.location.search.substr(1));
+				var arr1 = address.split("&");
+				var obj = {};
+				$(arr1).each(function(i) {
+					var arr = this.split("=");
+					obj[arr[0]] = arr[1];
+				})
+				return obj;
+			}
+			var hrefObj = getHref();
+			var newsCon = decodeURI(hrefObj.newListid);
+			var newsChil = decodeURI(hrefObj.newId);
+			seek(newsCon,newsChil);
+		if(newsCon==0){
+			newsCon="0";
+		}else if(newsCon==1){
+			newsCon="1";
+		}else if(newsCon==2){
+			newsCon="2";
+		}else if(newsCon==3){
+			newsCon="3";
+		}
+			function seek(newsCon,newsChil) {
+				//请求本地的json数据
+				$.get("json/newsConcent.json", function(msg) {
+					
+			
+				$('#yhq_news').html(msg[newsCon][newsChil])
+				})
+				
+			}
+
+		})
+	</script>
+
+</html>

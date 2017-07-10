@@ -1,0 +1,309 @@
+.operate_banner{
+	height:540px;
+	margin-bottom: 30px;
+}
+@media screen and (max-width: 768px) {
+  .operate_banner {
+    height: 440px;
+  }
+}
+.operate_banner .operate_title{
+	padding-top:194px;
+	
+}
+@media screen and (max-width: 768px) {
+.operate_banner .operate_title{
+	padding-top:80px;
+	
+}
+}
+.operate_banner .operate_title h3{
+font-size: 30px;
+
+color: #277EE0;
+background: #FFFFFF;
+border-radius: 100px;
+margin-top:0;
+margin-bottom:30px;
+line-height: 42px;
+text-align: center;
+
+}
+.operate_banner .operate_title p{
+/*padding-top:30px;*/
+font-size: 14px;
+color: #FFFFFF;
+line-height: 25px;
+}
+/*云海学院*/
+.yhq_college,.yhq_hope{
+	padding:80px 0;
+}
+@media screen and (max-width: 768px) {
+ .yhq_college,.yhq_hope{
+ 	padding-top:0;
+  }
+}
+.college h3,.yhq_hope h3{
+	font-size: 50px;
+color: #30364F;
+}
+@media screen and (max-width: 768px) {
+ .college h3,.yhq_hope h3{
+ 	text-align: center;
+  }
+}
+.college p,.yhq_hope p{
+	padding-top:20px;
+line-height: 24px;
+    font-size: 14px;
+    color: #6a6a6a;
+}
+/*.yhq_hope{
+	padding-top:0;
+}
+*/
+.yhq_activity{
+	
+	background-image:url(../img/Operating/yhq_yycbB.png) ;
+	    background-size: cover;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: relative;
+   width: 1400px;
+   margin:40px auto;
+
+   
+}
+@media screen and (max-width: 1400px) {
+  .yhq_activity {
+   width: 100%;
+  }
+}
+.yhq_activity .fh5co-project {
+  margin-bottom: 30px;
+}
+.yhq_activity .fh5co-project > a {
+  display: block;
+  color: #000;
+  position: relative;
+  bottom: 0;
+  overflow: hidden;
+height:268px;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.yhq_activity .fh5co-project > a img , .yunActive > a img {
+  position: relative;
+  -webkit-transition: 0.5s;
+  height:100%;
+  width:100%;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+  border-radius: 5px;
+}
+.yhq_activity .fh5co-project > a:after , .yunActive > a:after{
+  opacity: 0;
+  visibility: hidden;
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  top: 0;
+  -webkit-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
+  -ms-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
+  -o-box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
+  box-shadow: inset 0px -34px 98px 8px rgba(0, 0, 0, 0.75);
+  z-index: 8;
+  -webkit-transition: 0.5s;
+  -o-transition: 0.5s;
+  transition: 0.5s;
+}
+.yhq_activity .fh5co-project > a h3, .fh5co-project > a span {
+  z-index: 12;
+  position: absolute;
+  right: 20px;
+  left: 20px;
+  bottom: 50px;
+  color: #fff;
+  margin: 0;
+  padding: 0;
+  opacity: 1;
+  font-size: 30px;
+  font-weight: 300;
+  visibility: visible;
+  -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
+  transition: 0.3s;
+}
+.yhq_activity .fh5co-project > a span {
+  font-size: 14px;
+  bottom: 20px;
+}
+
+.yhq_activity .fh5co-project > a:hover , .yunActive > a{
+  -webkit-box-shadow: 0px 18px 71px -10px rgba(0, 0, 0, 0.75);
+  -moz-box-shadow: 0px 18px 71px -10px rgba(0, 0, 0, 0.75);
+  box-shadow: 0px 18px 71px -10px rgba(0, 0, 0, 0.75);
+}
+.yhq_activity .fh5co-project > a:hover:after , .yunActive > a:after{
+  opacity: 1;
+  visibility: visible;
+}
+@media screen and (max-width: 768px) {
+  .fh5co-project > a:hover:after {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+.yhq_activity .fh5co-project > a:hover h3,.yhq_activity .fh5co-project > a:hover span {
+  opacity: 1;
+  bottom: 55px;
+}
+.yhq_activity .fh5co-project > a:hover span {
+  bottom: 15px;
+}
+.yhq_activity .fh5co-project > a:hover img ,.yunActive > a img{
+  -webkit-transform: scale(1.1);
+  -moz-transform: scale(1.1);
+  -o-transform: scale(1.1);
+  transform: scale(1.1);
+}
+@media screen and (max-width: 768px) {
+  .fh5co-project > a:hover img {
+    -webkit-transform: scale(1);
+    -moz-transform: scale(1);
+    -o-transform: scale(1);
+    transform: scale(1);
+  }
+}
+.overall_architecture{
+	padding:40px 0;
+}
+.overallImg{
+	height:520px;
+}
+@media screen and (max-width: 768px) {
+.overallImg{
+	height:400px;
+}
+}
+.overallImg1{
+	padding-top:100px;
+	position: relative;
+
+}
+.overallImg1 .title{
+	position: absolute;
+	top:28%;
+	left:34%;
+	color: #FFFFFF;
+}
+@media screen and (max-width: 768px) {
+ .overallImg1 .title{
+ 	top:0%;
+ 	left:25%;
+ 	color:#277EE0;
+  }
+}
+@media screen and (max-width: 768px) {
+ .overallImg1 .title span{
+ 
+    color: #A5A5A5;
+  }
+}
+.overallImg1 .title h3{
+	font-size: 30px;
+	text-align: center;
+	margin:0;
+	padding:0;
+	padding-bottom: 10px;
+	
+}
+.overallImg1 .title span{
+	font-size: 14px;
+	margin:0;
+	padding:0;
+}
+.product_function{
+	padding:30px 0;
+	position: relative;
+}
+.product_functionB{
+	position: absolute;
+	height:366px;
+	width: 100%;
+	top:10px;
+	left:0;
+	background-image:url(../img/Operating/chanpinggongneng@1x.png) ;
+	background-size:100% 100%;
+    background-position:top center;
+    background-repeat: no-repeat;
+    z-index: -1;
+    
+ 
+}
+.product_function .col-md-10{
+	padding-top:80px;
+}
+@media screen and (max-width: 768px) {
+.product_function .col-md-10{
+	padding-top:20px;
+}
+}
+
+.product_function .title ,.product_feature .title{
+		padding-bottom: 40px;
+	
+}
+.product_function .title h3,.product_feature .title h3{
+	font-size: 30px;
+color: #277EE0;
+	margin:0;
+	padding:0;
+	margin-bottom: 10px;
+}
+.product_function .title span,.product_feature .title span{
+	font-size: 14px;
+color: #A5A5A5;
+}
+.product_feature{
+	border-top:1px soild #277EE0;
+	padding:60px 0;
+}
+
+.product_featureD{
+	border: 2px solid #277EE0;
+border-radius: 10px;
+overflow:hidden;
+padding:13px 0;
+margin-bottom: 20px;
+}
+.interconnectr {
+
+color: #30364F;
+letter-spacing: 0;
+height: 100%;
+}
+.interconnectr p{
+	padding-top:10px;
+		font-size: 16px;
+	line-height: 25px;
+}
+@media screen and (max-width: 768px) {
+ .interconnectr p{
+  padding-top:0;
+  }
+}
+.interconnectL span{
+	font-size: 30px;
+color: #277EE0;
+}
+@media screen and (max-width: 768px) {
+ .yhq_activity{
+ display: none;
+  }
+}

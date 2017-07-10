@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html>
+
+	<head>
+		<meta charset="utf-8" />
+		<title>云海慧服--关于我们</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<meta name="description" content="【易服】软件，在工业后服务中用设备将人与人的联接与沟通由串联变为互联；  【云海桥】工业后服务社群，云集工业企业和互联网领域的上千名桥友，探讨和传播OTO工业云服务理念  。  【云海播种】计划正是借助【云海桥】社群的影响力，将【云海易服】产品与理念传播出去，让更多的  工业企业加入并从中获益。">
+		<meta name="keywords" content="云海慧服">
+ 		<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+		<link rel="stylesheet" href="css/bootstrap.min.css">
+		<link rel="stylesheet" href="css/common.css" />
+		<link rel="stylesheet" href="css/animate.css" />
+		<link rel="stylesheet" href="css/News.css" />
+	</head>
+
+	<body>
+		<div class="containeg yhq_aboutUs" id="page">
+			<!--主页top开始-->
+
+			<!-- Header Area Start -->
+			<script type="text/javascript" src="html/tmpl/header.js"></script>
+			<!-- Background Area Start -->
+
+			<!--关于我们开始-->
+			<div class="aboutUs_banner  bg-3 overlay-blue">
+				<div class="overlay"></div>
+			</div>
+						<div class="phoneBanner">
+				<div class="container">
+					<div class="row">
+						<img class="img-responsive" src="img/homeImg/yhhfPhoneBanner.jpg" alt="云海慧服" />
+					</div>
+				</div>
+			</div>
+			<!--关于我们结束-->
+
+			<!--公司历程开始-->
+			<div class="content">
+				<div class="header">
+					<p class="title">新闻中心</p>
+					<p class="subtitle">News</p>
+				</div>
+				<div id="category" class="newTag">
+					<a href="###" class="active">品牌</a>
+					<a href="###">产品</a>
+					<a href="###">服务</a>
+					<a href="###">资讯</a>
+				</div>
+				<div class="newListt">
+					<div class="newslistl newslistShow">
+						<div class="container">
+							<div class="row">
+
+							</div>
+						</div>
+					</div>
+					<div class="newslistl">
+						<div class="container">
+							<div class="row">
+
+							</div>
+						</div>
+					</div>
+					<div class="newslistl">
+						<div class="container">
+							<div class="row">
+
+							</div>
+						</div>
+					</div>
+					<div class="newslistl">
+						<div class="container">
+							<div class="row">
+
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				
+			</div>
+
+			<script type="text/javascript" src="html/tmpl/footer.js"></script>
+			</div>
+	</body>
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+	<script type="text/javascript" src="js/wow.js"></script>
+	<script>
+		$(document).ready(function() {
+			//请求本地的json数据
+			$.get("json/newsList.json", function(msg) {
+				addNav(msg);
+				chooseTag();
+				clickNew();
+
+			})
+
+			function addNav(json) {
+
+				var num = 0; //创建一个变量，找到每个div的下脚标
+				for(var key in json) {
+					var newImgurl = json[key].newImgurl.split("|");
+					var goodsPic = json[key].newTitle.split("|");
+					var newDay = json[key].newDay.split("|");
+					var newConcent = json[key].newConcent.split("|");
+					var $newLst = $(".newslistl .row");
+
+					var $wrapper = $("<div class='wrapper'></div>")
+				
+					for(var i = 0; i < newImgurl.length; i++) {
+						var newslistNav = $('<div class="col-md-4 ">' +
+							'<div id="newsitem_2" class="newstitem">' +
+							'<a class="newscontent" href="javascript:;">' +
+							'<div class="news_wrapper">' +
+							'<div class="newsbody">' +
+							'<p class="date"><span class="md">' + newDay[i] + '</span></p>' +
+							'<p class="title">' + goodsPic[i] + '</p>' +
+							'<div class="separator"></div>' +
+							'<p class="description">' + newConcent[i] + '</p>' +
+							'</div>' +
+							'</div>' +
+							'<div class="newsimg" style="background-image:url(' + newImgurl[i] + ')"></div>' +
+							'</a>' +
+
+							'</div>' +
+							'</div>');
+						newslistNav.appendTo($wrapper); //通过循环将每次json里面的内容加载到ul中	
+					}
+					num++;
+
+					$wrapper.appendTo($newLst.eq(num - 1)); //最后将每个ul中的内容加载到div中
+				}
+				
+				
+
+			}
+			function clickNew(){
+				$(".newslistl .wrapper .col-md-4").each(function(index){
+					$(this).click(function(){
+						var newId = $(this).index();
+						var newListid =$(this).parent().parent().parent().parent().index();
+						window.open("newConcent.html?newListid="+newListid+"&newId="+newId)
+						
+					})
+			
+			})
+			}
+			function chooseTag() {
+				var $navTab = $(".newTag a");
+				$navTab.click(function() {
+					$(this).addClass("active").siblings().removeClass("active");
+					$(".newslistl").eq($(this).index()).addClass("newslistShow").siblings().removeClass("newslistShow");
+				})
+			}
+		})
+	</script>
+
+</html>
